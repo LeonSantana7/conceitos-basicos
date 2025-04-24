@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
@@ -6,7 +6,7 @@ body{
     align-items: center;
 }
 
-.container{
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +15,7 @@ body{
     margin-top: 50px;
 }
 
-.form-box{
+.form-box {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px #000;
@@ -24,18 +24,18 @@ body{
     text-align: center;
 }
 
-h2{
+h2 {
     margin-bottom: 20px;
     color: #333;
 }
 
-label{
+label {
     display: block;
     margin: 10px 0 5px;
     color: #555;
 }
 
-input[type="number"]{
+input[type="number"] {
     width: 70%;
     padding: 10px;
     margin-bottom: 15px;
@@ -44,7 +44,7 @@ input[type="number"]{
     font-size: 16px;
 }
 
-button{
+button {
     width: 75%;
     padding: 10px;
     background-color: #2b0e9e;
@@ -53,4 +53,18 @@ button{
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.result-display {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+#result {
+    font-weight: bold;
 }
