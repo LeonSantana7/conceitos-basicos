@@ -12,7 +12,7 @@
     text-align: center;
     width: 90%;
     max-width: 600px;
-
+    margin-left: 25%;
 
     h1 {
         font-size: 24px;
@@ -42,7 +42,7 @@ input {
     }
 }
 
-button {
+button[type="submit"] {
     padding: 10px 20px;
     border: none;
     border-radius: 6px;
@@ -56,6 +56,17 @@ button {
     &:hover {
         background: #0056b3;
     }
+}
+
+button[type="button"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #d51f1f;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: backgroud 0.3s;
 }
 
 table {
@@ -93,7 +104,6 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-.item-riscado{
+.item-riscado {
     text-decoration: line-through; // coloca um traço em cima do texto
-    
 }

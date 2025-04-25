@@ -1,9 +1,10 @@
 <div class="container">
     <h1>Lista de Compras</h1>
-
     <form #frm="ngForm" class="add-item-form" (submit)="adicionarItem()">
         <input type="text" id="item" name="item" [(ngModel)]="item" placeholder="Digite o nome do item">
         <button type="submit">Adicionar</button>
+
+        <button type="button" (click)="limparLista()">Limpar Lista</button>
     </form>
     <table>
         <thead>
@@ -16,18 +17,17 @@
         <tbody>
             <tr *ngFor="let elemento of lista; let i = index">
                 <td>{{elemento.id}}</td>
-                <td><span ngClass="{'item-riscado' : elemtento.comprado}">{{elemento.nome}}</span></td>
-                <td><input type="checkbox" 
-                    (click)="riscarItem(elemento)" 
-                    [checked]="elemento.comprado">
+                <td><span [ngClass]="{'item-riscado' : elemento.comprado}">{{elemento.nome}}</span></td>
+                <td><input type="checkbox" (click)="riscarItem(elemento)" [checked]="elemento.comprado">
                 </td>
             </tr>
             <tr *ngIf="lista.length === 0">
-                <td colspan="3" style="text-align: center;"> <!-- colspan: Garante que a mensagem ocupe todas colunas da tabela-->
+                <td colspan="3" style="text-align: center;">
+                    <!-- colspan: Garante que a mensagem ocupe todas colunas da tabela-->
                     Nenhum item adicionado!
                 </td>
             </tr>
-              <!-- @for (elemento of lista; track elemento.id) {
+            <!-- @for (elemento of lista; track elemento.id) {
                   <tr>
                      <td>{{elemento.id}}</td>
                      <td>{{elemento.nome}}</td>

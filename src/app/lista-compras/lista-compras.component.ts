@@ -5,7 +5,7 @@ import { ItemLista } from './itemlista';
 
 @Component({
   selector: 'app-lista-compras',
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './lista-compras.component.html',
   styleUrl: './lista-compras.component.scss'
 })
@@ -14,17 +14,21 @@ export class ListaComprasComponent {
 
   lista: ItemLista[] = [];
 
-  adicionarItem(){
-    let  itemLista = new ItemLista();
+  adicionarItem() {
+    let itemLista = new ItemLista();
     itemLista.nome = this.item;
     itemLista.id = this.lista.length + 1;
 
     this.lista.push(itemLista);
 
-    this.item="";
+    this.item = "";
   }
 
-  riscarItem(itemLista: ItemLista){
+  riscarItem(itemLista: ItemLista) {
     itemLista.comprado = !itemLista.comprado;
+  }
+
+  limparLista() {
+    this.lista = [];
   }
 }
