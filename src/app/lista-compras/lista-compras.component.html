@@ -3,7 +3,6 @@
     <form #frm="ngForm" class="add-item-form" (submit)="adicionarItem()">
         <input type="text" id="item" name="item" [(ngModel)]="item" placeholder="Digite o nome do item">
         <button type="submit">Adicionar</button>
-
         <button type="button" (click)="limparLista()">Limpar Lista</button>
     </form>
     <table>
