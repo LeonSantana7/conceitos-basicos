@@ -1,8 +1,8 @@
 <div class="container">
     <h1>Lista de Compras</h1>
 
-    <form class="add-item-form">
-        <input type="text" id="item" placeholder="Digite o nome do item">
+    <form #frm="ngForm" class="add-item-form" (submit)="adicionarItem()">
+        <input type="text" id="item" name="item" [(ngModel)]="item" placeholder="Digite o nome do item">
         <button type="submit">Adicionar</button>
     </form>
     <table>
@@ -14,16 +14,30 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Arroz</td>
-                <td><input type="checkbox"></td>
+            <tr *ngFor="let elemento of lista; let i = index">
+                <td>{{elemento.id}}</td>
+                <td><span ngClass="{'item-riscado' : elemtento.comprado}">{{elemento.nome}}</span></td>
+                <td><input type="checkbox" 
+                    (click)="riscarItem(elemento)" 
+                    [checked]="elemento.comprado">
+                </td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Maça</td>
-                <td><input type="checkbox"></td>
+            <tr *ngIf="lista.length === 0">
+                <td colspan="3" style="text-align: center;"> <!-- colspan: Garante que a mensagem ocupe todas colunas da tabela-->
+                    Nenhum item adicionado!
+                </td>
             </tr>
+              <!-- @for (elemento of lista; track elemento.id) {
+                  <tr>
+                     <td>{{elemento.id}}</td>
+                     <td>{{elemento.nome}}</td>
+                     <td><input type="checkbox"></td>
+                 </tr>
+                } @empty{ // else
+                 <tr> colspan="3"
+                    Nenhum item adicionado
+                 </tr>
+                } -->
         </tbody>
     </table>
 </div>
